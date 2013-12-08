@@ -1,11 +1,12 @@
 (function (window) {
   var Asteroids = window.Asteroids = (window.Asteroids || {});
 
-  var MovingObject = Asteroids.MovingObject = function(pos, vel, rad, col) {
+  var MovingObject = Asteroids.MovingObject = function(pos, vel, rad, col, fill) {
     this.pos = pos;
     this.vel = vel;
     this.rad = rad;
     this.col = col;
+    this.fill = fill || false;
   }
 
   MovingObject.prototype.move = function() {
@@ -28,6 +29,10 @@
     );
 
     ctx.stroke();
+    if (this.fill) {
+      ctx.fillStyle = this.col;
+      ctx.fill();
+    }
   }
 
   MovingObject.prototype.isCollidedWith = function(otherObject) {

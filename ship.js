@@ -8,7 +8,7 @@
     this.pos = pos;
 		
     this.vel = [0, 0];
-    window.Asteroids.MovingObject.call(this, this.pos, this.vel, this.RAD, this.COL);
+    window.Asteroids.MovingObject.call(this, this.pos, this.vel, this.RAD, this.COL, true);
   }
 
   Ship.inherits(window.Asteroids.MovingObject);
